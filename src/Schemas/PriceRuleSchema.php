@@ -22,6 +22,7 @@ class PriceRuleSchema extends Schema
                 ->setUnique(true),
             Attributes\LongTextAttribute::make('description'),
             Attributes\ClassNameAttribute::make('class_name', [PriceRuleContract::class]),
+            Attributes\ObjectAttribute::make('payload'),
             Attributes\CreatedAtAttribute::make(),
             Attributes\UpdatedAtAttribute::make(),
             Attributes\DeletedAtAttribute::make(),

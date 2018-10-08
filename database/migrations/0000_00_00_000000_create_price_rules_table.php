@@ -17,6 +17,7 @@ class CreatePriceRulesTable extends Migration
             $table->string('name')->unique();
             $table->text('description')->nullable();
             $table->string('class_name');
+            $table->text('payload')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

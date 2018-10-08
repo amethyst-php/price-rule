@@ -20,6 +20,7 @@ class PriceRuleFaker extends Faker
         $bag->set('name', $faker->name);
         $bag->set('description', $faker->text);
         $bag->set('class_name', OneTimePriceRule::class);
+        $bag->set('payload', ['x' => 1]);
 
         return $bag;
     }

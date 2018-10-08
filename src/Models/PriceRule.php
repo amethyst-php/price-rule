@@ -13,6 +13,15 @@ class PriceRule extends Model implements EntityContract
     use SoftDeletes;
 
     /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'payload' => 'object',
+    ];
+
+    /**
      * Creates a new instance of the model.
      *
      * @param array $attributes
