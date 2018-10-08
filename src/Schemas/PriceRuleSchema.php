@@ -2,6 +2,7 @@
 
 namespace Railken\Amethyst\Schemas;
 
+use Railken\Amethyst\Contracts\PriceRuleContract;
 use Railken\Lem\Attributes;
 use Railken\Lem\Schema;
 
@@ -20,6 +21,7 @@ class PriceRuleSchema extends Schema
                 ->setRequired(true)
                 ->setUnique(true),
             Attributes\LongTextAttribute::make('description'),
+            Attributes\ClassNameAttribute::make('class_name', [PriceRuleContract::class]),
             Attributes\CreatedAtAttribute::make(),
             Attributes\UpdatedAtAttribute::make(),
             Attributes\DeletedAtAttribute::make(),
