@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Config;
 use Railken\Amethyst\Schemas\PriceRuleSchema;
 use Railken\Lem\Contracts\EntityContract;
 
+/**
+ * @property object $payload
+ */
 class PriceRule extends Model implements EntityContract
 {
     use SoftDeletes;
