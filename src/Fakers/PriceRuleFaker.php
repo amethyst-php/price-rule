@@ -3,7 +3,7 @@
 namespace Railken\Amethyst\Fakers;
 
 use Faker\Factory;
-use Railken\Amethyst\PriceRules\OneTimePriceRule;
+use Railken\Amethyst\PriceRules\BasePriceRule;
 use Railken\Bag;
 use Railken\Lem\Faker;
 
@@ -19,7 +19,7 @@ class PriceRuleFaker extends Faker
         $bag = new Bag();
         $bag->set('name', $faker->name);
         $bag->set('description', $faker->text);
-        $bag->set('class_name', OneTimePriceRule::class);
+        $bag->set('class_name', BasePriceRule::class);
         $bag->set('payload', ['x' => 1]);
 
         return $bag;
