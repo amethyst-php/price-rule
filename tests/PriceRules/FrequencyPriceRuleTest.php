@@ -24,9 +24,9 @@ class FrequencyPriceRuleTest extends BaseTest
         $rule = new FrequencyPriceRule();
 
         $this->assertEquals(10, $rule->calculate($resource, 10, ['time_unit' => 'months', 'time_value' => 1]));
-        $this->assertEquals(10/2, $rule->calculate($resource, 10, ['time_unit' => 'months', 'time_value' => 1/2]));
-        $this->assertEquals(10*2, $rule->calculate($resource, 10, ['time_unit' => 'days', 'time_value' => 30*2]));
-        $this->assertEquals(10*2, $rule->calculate($resource, 10, ['time_unit' => 'seconds', 'time_value' => 2592000*2]));
-        $this->assertEquals(10*2, $rule->calculate($resource, 10, ['time_unit' => 'minutes', 'time_value' => 43200*2]));
+        $this->assertEquals(10 / 2, $rule->calculate($resource, 10, ['time_unit' => 'months', 'time_value' => 1 / 2]));
+        $this->assertEquals(10 * 2, $rule->calculate($resource, 10, ['time_unit' => 'days', 'time_value' => 30 * 2]));
+        $this->assertEquals(10 * 2, $rule->calculate($resource, 10, ['time_unit' => 'seconds', 'time_value' => 2592000 * 2]));
+        $this->assertEquals(10 * 2, $rule->calculate($resource, 10, ['time_unit' => 'minutes', 'time_value' => 43200 * 2]));
     }
 }
