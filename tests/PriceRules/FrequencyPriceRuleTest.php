@@ -13,12 +13,13 @@ class FrequencyPriceRuleTest extends BaseTest
     {
         $manager = new PriceRuleManager();
 
-        $resource = $manager->createOrFail(PriceRuleFaker::make()->parameters()
-            ->set('class_name', FrequencyPriceRule::class)
-            ->set('payload', [
-                'frequency_unit'  => 'months',
-                'frequency_value' => '1',
-            ])
+        $resource = $manager->createOrFail(
+            PriceRuleFaker::make()->parameters()
+                ->set('class_name', FrequencyPriceRule::class)
+                ->set('payload', [
+                    'frequency_unit'  => 'months',
+                    'frequency_value' => '1',
+                ])
         )->getResource();
 
         $rule = new FrequencyPriceRule();

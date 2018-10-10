@@ -14,9 +14,10 @@ class ExpressionPriceRuleTest extends BaseTest
     {
         $manager = new PriceRuleManager();
 
-        $resource = $manager->createOrFail(PriceRuleFaker::make()->parameters()
-            ->set('class_name', ExpressionPriceRule::class)
-            ->set('payload', ['expression' => 'x * (v / 100 + 1)'])
+        $resource = $manager->createOrFail(
+            PriceRuleFaker::make()->parameters()
+                ->set('class_name', ExpressionPriceRule::class)
+                ->set('payload', ['expression' => 'x * (v / 100 + 1)'])
         )->getResource();
 
         $rule = new ExpressionPriceRule();
