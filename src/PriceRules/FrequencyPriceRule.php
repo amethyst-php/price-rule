@@ -43,8 +43,6 @@ class FrequencyPriceRule implements PriceRuleContract
             throw new Exceptions\PriceRuleWrongOptionsException('Missing end in options');
         }
 
-        print_r($options);
-
         // Calculate difference in seconds between end and start
         $diff = $options->start->diff($options->end);
         $diff = $this->getDateIntervalPropertyByUnit($diff, $payload->frequency_unit) / $payload->frequency_value;
