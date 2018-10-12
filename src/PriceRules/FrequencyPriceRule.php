@@ -2,6 +2,7 @@
 
 namespace Railken\Amethyst\PriceRules;
 
+use DateInterval;
 use MathParser\StdMathParser;
 use Railken\Amethyst\Contracts\PriceRuleContract;
 use Railken\Amethyst\Exceptions;
@@ -34,19 +35,59 @@ class FrequencyPriceRule implements PriceRuleContract
             throw new Exceptions\PriceRuleWrongPayloadException('Missing frequency_value in payload');
         }
 
-        $diff = (float) $payload->frequency_value / $this->convertTime($payload->frequency_unit, (float) $payload->frequency_value);
-
-        $price_per_second = $price * $diff;
-
-        if (!isset($options->time_unit)) {
-            throw new Exceptions\PriceRuleWrongOptionsException('Missing time_unit in options');
+        if (!isset($options->start)) {
+            throw new Exceptions\PriceRuleWrongOptionsException('Missing start in options');
         }
 
-        if (!isset($options->time_value)) {
-            throw new Exceptions\PriceRuleWrongOptionsException('Missing time_value in options');
+        if (!isset($options->end)) {
+            throw new Exceptions\PriceRuleWrongOptionsException('Missing end in options');
         }
 
-        return $price_per_second * $this->convertTime($options->time_unit, $options->time_value);
+        // Calculate difference in seconds between end and start
+        $diff = $options->start->diff($options->end);
+
+        $cyclePassed = intval($this->getDateIntervalPropertyByUnit($diff, $payload->frequency_unit) / $payload->frequency_value);
+
+        // Frequency has not been reached
+        if ($cyclePassed === 0) {
+            return null;
+        }
+
+        return $cyclePassed * $price;
+    }
+
+    /**
+     * Retrieve date interval property by unit.
+     *
+     * @param string $unit
+     *
+     * @return string
+     */
+    public function getDateIntervalPropertyByUnit(DateInterval $diff, $unit)
+    {
+        if ($unit === 'seconds') {
+            return $diff->s + $diff->i * 60 + $diff->h * 60 * 60 + $diff->days * 60 * 60 * 24;
+        }
+
+        if ($unit === 'minutes') {
+            return $diff->i + $diff->h * 60 + $diff->days * 60 * 24;
+        }
+
+        if ($unit === 'hours') {
+            return $diff->h + $diff->days * 24;
+        }
+
+        if ($unit === 'days') {
+            return $diff->days;
+        }
+
+        if ($unit === 'months') {
+            return $diff->m;
+        }
+
+        if ($unit === 'years') {
+            return $diff->y;
+        }
     }
 
     /**
