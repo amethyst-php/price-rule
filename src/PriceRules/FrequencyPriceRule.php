@@ -82,7 +82,7 @@ class FrequencyPriceRule implements PriceRuleContract
         }
 
         if ($unit === 'months') {
-            return $diff->m;
+            return $diff->m + $diff->y * 12;
         }
 
         if ($unit === 'years') {

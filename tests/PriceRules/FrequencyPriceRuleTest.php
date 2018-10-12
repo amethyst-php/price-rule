@@ -30,5 +30,6 @@ class FrequencyPriceRuleTest extends BaseTest
         $this->assertEquals(10, $rule->calculate($resource, 10, ['start' => (new \DateTime())->modify('-1 month'), 'end' => $end]));
         $this->assertEquals(20, $rule->calculate($resource, 10, ['start' => (new \DateTime())->modify('-2 month'), 'end' => $end]));
         $this->assertEquals(null, $rule->calculate($resource, 10, ['start' => (new \DateTime())->modify('-15 days'), 'end' => $end]));
+        $this->assertEquals(240, $rule->calculate($resource, 10, ['start' => (new \DateTime())->modify('-2 years'), 'end' => $end]));
     }
 }
