@@ -17,7 +17,7 @@ class FrequencyPriceRule implements PriceRuleContract
      * @param float     $price
      * @param array     $options
      *
-     * @return float
+     * @return float|null
      */
     public function calculate(PriceRule $priceRule, float $price, array $options = [])
     {
@@ -43,10 +43,12 @@ class FrequencyPriceRule implements PriceRuleContract
             throw new Exceptions\PriceRuleWrongOptionsException('Missing end in options');
         }
 
+        print_r($options);
+
         // Calculate difference in seconds between end and start
         $diff = $options->start->diff($options->end);
-
-        $cyclePassed = intval($this->getDateIntervalPropertyByUnit($diff, $payload->frequency_unit) / $payload->frequency_value);
+        $diff = $this->getDateIntervalPropertyByUnit($diff, $payload->frequency_unit) / $payload->frequency_value;
+        $cyclePassed = intval($diff);
 
         // Frequency has not been reached
         if ($cyclePassed === 0) {
@@ -59,9 +61,10 @@ class FrequencyPriceRule implements PriceRuleContract
     /**
      * Retrieve date interval property by unit.
      *
-     * @param string $unit
+     * @param DateInterval $diff
+     * @param string       $unit
      *
-     * @return string
+     * @return float|int
      */
     public function getDateIntervalPropertyByUnit(DateInterval $diff, $unit)
     {
