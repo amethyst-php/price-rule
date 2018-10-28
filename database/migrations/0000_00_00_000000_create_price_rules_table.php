@@ -12,7 +12,7 @@ class CreatePriceRulesTable extends Migration
      */
     public function up()
     {
-        Schema::create(Config::get('amethyst.price-rule.managers.price-rule.table'), function (Blueprint $table) {
+        Schema::create(Config::get('amethyst.price-rule.data.price-rule.table'), function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
             $table->text('description')->nullable();
@@ -28,6 +28,6 @@ class CreatePriceRulesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(Config::get('amethyst.price-rule.managers.price-rule.table'));
+        Schema::dropIfExists(Config::get('amethyst.price-rule.data.price-rule.table'));
     }
 }

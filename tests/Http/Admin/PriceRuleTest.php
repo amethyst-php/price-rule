@@ -25,9 +25,9 @@ class PriceRuleTest extends BaseTest
     protected $group = 'admin';
 
     /**
-     * Base path config.
+     * Route name.
      *
      * @var string
      */
-    protected $config = 'amethyst.price-rule.http.admin.price-rule';
+    protected $route = 'admin.price-rule';
 }
