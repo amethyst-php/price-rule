@@ -30,7 +30,8 @@ class ExpressionPriceRuleTest extends BaseTest
         $this->expectException(Exceptions\PriceRuleWrongPayloadException::class);
         $manager = new PriceRuleManager();
 
-        $resource = $manager->createOrFail(PriceRuleFaker::make()->parameters()
+        $resource = $manager->createOrFail(
+            PriceRuleFaker::make()->parameters()
             ->set('class_name', ExpressionPriceRule::class)
             ->set('payload', [])
         )->getResource();
@@ -44,7 +45,8 @@ class ExpressionPriceRuleTest extends BaseTest
         $this->expectException(Exceptions\PriceRuleWrongOptionsException::class);
         $manager = new PriceRuleManager();
 
-        $resource = $manager->createOrFail(PriceRuleFaker::make()->parameters()
+        $resource = $manager->createOrFail(
+            PriceRuleFaker::make()->parameters()
             ->set('class_name', ExpressionPriceRule::class)
             ->set('payload', ['expression' => 'x * (v / 100 + 1)'])
         )->getResource();
