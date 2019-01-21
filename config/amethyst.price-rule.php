@@ -35,11 +35,11 @@ return [
     'http' => [
         'admin' => [
             'price-rule' => [
-                'enabled'     => true,
-                'controller'  => Railken\Amethyst\Http\Controllers\Admin\PriceRulesController::class,
-                'router'      => [
-                    'as'        => 'price-rule.',
-                    'prefix'    => '/price-rules',
+                'enabled'    => true,
+                'controller' => Railken\Amethyst\Http\Controllers\Admin\PriceRulesController::class,
+                'router'     => [
+                    'as'     => 'price-rule.',
+                    'prefix' => '/price-rules',
                 ],
             ],
         ],
