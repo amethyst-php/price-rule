@@ -13,4 +13,4 @@ return [
             'description' => 'Configurazione usata dalla classe per il calcolo del prezzo'
         ]
     ]
-]
+];
