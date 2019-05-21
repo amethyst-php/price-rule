@@ -21,7 +21,7 @@ class PriceRuleSchema extends Schema
                 ->setRequired(true)
                 ->setUnique(true),
             Attributes\LongTextAttribute::make('description'),
-            Attributes\ClassNameAttribute::make('class_name', [PriceRuleContract::class])
+            Attributes\EnumAttribute::make('class_name', config('amethyst.price-rule.data.price-rule.attributes.class_name.options'))
                 ->setRequired(true),
             Attributes\ObjectAttribute::make('payload'),
             Attributes\CreatedAtAttribute::make(),

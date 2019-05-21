@@ -21,6 +21,14 @@ return [
             'authorizer' => Railken\Amethyst\Authorizers\PriceRuleAuthorizer::class,
             'faker'      => Railken\Amethyst\Fakers\PriceRuleFaker::class,
             'manager'    => Railken\Amethyst\Managers\PriceRuleManager::class,
+            'attributes' => [
+                'class_name' => [
+                    'options' => [
+                        Railken\Amethyst\PriceRules\BasePriceRule::class,
+                        Railken\Amethyst\PriceRules\ExpressionPriceRule::class,
+                    ],
+                ],
+            ],
         ],
     ],
 

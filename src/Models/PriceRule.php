@@ -25,4 +25,11 @@ class PriceRule extends Model implements EntityContract
         $this->ini('amethyst.price-rule.data.price-rule');
         parent::__construct($attributes);
     }
+
+    public function calculate($price, array $vars = [])
+    {
+        $rule = new $this->class;
+
+        return $rule->calculate($this, $price, ['vars' => $vars]);
+    }
 }
