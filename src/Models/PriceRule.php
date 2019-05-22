@@ -28,7 +28,7 @@ class PriceRule extends Model implements EntityContract
 
     public function calculate($price, array $vars = [])
     {
-        $rule = new $this->class;
+        $rule = new $this->class();
 
         return $rule->calculate($this, $price, ['vars' => $vars]);
     }

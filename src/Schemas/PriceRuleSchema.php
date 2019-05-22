@@ -2,7 +2,6 @@
 
 namespace Railken\Amethyst\Schemas;
 
-use Railken\Amethyst\Contracts\PriceRuleContract;
 use Railken\Lem\Attributes;
 use Railken\Lem\Schema;
 
