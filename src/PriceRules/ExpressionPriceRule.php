@@ -1,12 +1,12 @@
 <?php
 
-namespace Railken\Amethyst\PriceRules;
+namespace Amethyst\PriceRules;
 
 use MathParser\Interpreting\Evaluator;
 use MathParser\StdMathParser;
-use Railken\Amethyst\Contracts\PriceRuleContract;
-use Railken\Amethyst\Exceptions;
-use Railken\Amethyst\Models\PriceRule;
+use Amethyst\Contracts\PriceRuleContract;
+use Amethyst\Exceptions;
+use Amethyst\Models\PriceRule;
 
 class ExpressionPriceRule implements PriceRuleContract
 {

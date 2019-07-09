@@ -1,10 +1,10 @@
 {
-    "name": "railken/amethyst-price-rule",
+    "name": "amethyst/price-rule",
     "keywords": ["laravel", "amethyst", "amethyst-price-rule", "price-rule"],
     "license": "MIT",
     "require": {
         "php": ">=7.1",
-        "railken/amethyst-common": "0.1.*",
+        "amethyst/common": "0.1.*",
         "mossadal/math-parser": "^1.3"
     },
     "require-dev": {
@@ -13,18 +13,18 @@
     },
     "autoload": {
         "psr-4" : {
-            "Railken\\Amethyst\\" : "src/"
+            "Amethyst\\" : "src/"
         }
     },
     "autoload-dev": {
         "psr-4": { 
-            "Railken\\Amethyst\\Tests\\": "tests/" 
+            "Amethyst\\Tests\\": "tests/" 
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Railken\\Amethyst\\Providers\\PriceRuleServiceProvider"
+                "Amethyst\\Providers\\PriceRuleServiceProvider"
             ]
         }
     }

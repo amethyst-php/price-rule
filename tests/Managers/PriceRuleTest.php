@@ -1,10 +1,10 @@
 <?php
 
-namespace Railken\Amethyst\Tests\Managers;
+namespace Amethyst\Tests\Managers;
 
-use Railken\Amethyst\Fakers\PriceRuleFaker;
-use Railken\Amethyst\Managers\PriceRuleManager;
-use Railken\Amethyst\Tests\BaseTest;
+use Amethyst\Fakers\PriceRuleFaker;
+use Amethyst\Managers\PriceRuleManager;
+use Amethyst\Tests\BaseTest;
 use Railken\Lem\Support\Testing\TestableBaseTrait;
 
 class PriceRuleTest extends BaseTest

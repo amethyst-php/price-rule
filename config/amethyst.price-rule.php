@@ -13,19 +13,19 @@ return [
         'price-rule' => [
             'table'      => 'amethyst_price_rules',
             'comment'    => 'Price Rule',
-            'model'      => Railken\Amethyst\Models\PriceRule::class,
-            'schema'     => Railken\Amethyst\Schemas\PriceRuleSchema::class,
-            'repository' => Railken\Amethyst\Repositories\PriceRuleRepository::class,
-            'serializer' => Railken\Amethyst\Serializers\PriceRuleSerializer::class,
-            'validator'  => Railken\Amethyst\Validators\PriceRuleValidator::class,
-            'authorizer' => Railken\Amethyst\Authorizers\PriceRuleAuthorizer::class,
-            'faker'      => Railken\Amethyst\Fakers\PriceRuleFaker::class,
-            'manager'    => Railken\Amethyst\Managers\PriceRuleManager::class,
+            'model'      => Amethyst\Models\PriceRule::class,
+            'schema'     => Amethyst\Schemas\PriceRuleSchema::class,
+            'repository' => Amethyst\Repositories\PriceRuleRepository::class,
+            'serializer' => Amethyst\Serializers\PriceRuleSerializer::class,
+            'validator'  => Amethyst\Validators\PriceRuleValidator::class,
+            'authorizer' => Amethyst\Authorizers\PriceRuleAuthorizer::class,
+            'faker'      => Amethyst\Fakers\PriceRuleFaker::class,
+            'manager'    => Amethyst\Managers\PriceRuleManager::class,
             'attributes' => [
                 'class_name' => [
                     'options' => [
-                        Railken\Amethyst\PriceRules\BasePriceRule::class,
-                        Railken\Amethyst\PriceRules\ExpressionPriceRule::class,
+                        Amethyst\PriceRules\BasePriceRule::class,
+                        Amethyst\PriceRules\ExpressionPriceRule::class,
                     ],
                 ],
             ],
@@ -44,7 +44,7 @@ return [
         'admin' => [
             'price-rule' => [
                 'enabled'    => true,
-                'controller' => Railken\Amethyst\Http\Controllers\Admin\PriceRulesController::class,
+                'controller' => Amethyst\Http\Controllers\Admin\PriceRulesController::class,
                 'router'     => [
                     'as'     => 'price-rule.',
                     'prefix' => '/price-rules',

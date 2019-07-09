@@ -1,9 +1,9 @@
 <?php
 
-namespace Railken\Amethyst\PriceRules;
+namespace Amethyst\PriceRules;
 
-use Railken\Amethyst\Contracts\PriceRuleContract;
-use Railken\Amethyst\Models\PriceRule;
+use Amethyst\Contracts\PriceRuleContract;
+use Amethyst\Models\PriceRule;
 
 class BasePriceRule implements PriceRuleContract
 {

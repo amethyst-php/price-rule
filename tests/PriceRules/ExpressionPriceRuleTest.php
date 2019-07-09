@@ -1,12 +1,12 @@
 <?php
 
-namespace Railken\Amethyst\Tests\PriceRules;
+namespace Amethyst\Tests\PriceRules;
 
-use Railken\Amethyst\Exceptions;
-use Railken\Amethyst\Fakers\PriceRuleFaker;
-use Railken\Amethyst\Managers\PriceRuleManager;
-use Railken\Amethyst\PriceRules\ExpressionPriceRule;
-use Railken\Amethyst\Tests\BaseTest;
+use Amethyst\Exceptions;
+use Amethyst\Fakers\PriceRuleFaker;
+use Amethyst\Managers\PriceRuleManager;
+use Amethyst\PriceRules\ExpressionPriceRule;
+use Amethyst\Tests\BaseTest;
 
 class ExpressionPriceRuleTest extends BaseTest
 {
