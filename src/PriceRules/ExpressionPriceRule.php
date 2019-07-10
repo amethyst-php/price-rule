@@ -2,11 +2,11 @@
 
 namespace Amethyst\PriceRules;
 
-use MathParser\Interpreting\Evaluator;
-use MathParser\StdMathParser;
 use Amethyst\Contracts\PriceRuleContract;
 use Amethyst\Exceptions;
 use Amethyst\Models\PriceRule;
+use MathParser\Interpreting\Evaluator;
+use MathParser\StdMathParser;
 
 class ExpressionPriceRule implements PriceRuleContract
 {
