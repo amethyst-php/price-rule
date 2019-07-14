@@ -16,7 +16,7 @@ class BasePriceRule implements PriceRuleContract
      *
      * @return float
      */
-    public function calculate(PriceRule $priceRule, float $price, array $options = [])
+    public function calculate(PriceRule $priceRule, float $price, array $options = []): float
     {
         return $price;
     }

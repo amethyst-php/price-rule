@@ -13,7 +13,7 @@ interface PriceRuleContract
      * @param float     $price
      * @param array     $options
      *
-     * @return array
+     * @return float
      */
-    public function calculate(PriceRule $priceRule, float $price, array $options = []);
+    public function calculate(PriceRule $priceRule, float $price, array $options = []): float;
 }
