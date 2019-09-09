@@ -14,7 +14,7 @@ class CreatePriceRulesTable extends Migration
     {
         Schema::create(Config::get('amethyst.price-rule.data.price-rule.table'), function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
+            $table->string('name')->index();
             $table->text('description')->nullable();
             $table->string('class_name');
             $table->text('payload')->nullable();
