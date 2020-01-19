@@ -1,6 +1,6 @@
 # amethyst-price-rule
 
-[![Build Status](https://travis-ci.org/amethyst-php/price-rule.svg?branch=master)](https://travis-ci.org/amethyst-php/price-rule)
+[![Action Status](https://github.com/amethyst-php/price-rule/workflows/test/badge.svg)](https://github.com/amethyst-php/price-rule/actions)
 
 [Amethyst](https://github.com/amethyst-php/amethyst) package.
 
