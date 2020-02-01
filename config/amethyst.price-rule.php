@@ -31,25 +31,4 @@ return [
             ],
         ],
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Http configuration
-    |--------------------------------------------------------------------------
-    |
-    | Here you may configure the routes
-    |
-    */
-    'http' => [
-        'admin' => [
-            'price-rule' => [
-                'enabled'    => true,
-                'controller' => Amethyst\Http\Controllers\Admin\PriceRulesController::class,
-                'router'     => [
-                    'as'     => 'price-rule.',
-                    'prefix' => '/price-rules',
-                ],
-            ],
-        ],
-    ],
 ];
